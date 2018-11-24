@@ -1,0 +1,8 @@
+{
+  "name": "easy-out",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "c052ed48"
+}

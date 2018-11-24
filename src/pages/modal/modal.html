@@ -1,0 +1,35 @@
+<!--
+  Generated template for the ModalPage page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{modalValues.modalTitle}}</ion-title>
+        <ion-buttons end>
+        <button ion-button (click)="closeModal()">Close</button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header> 
+  <ion-content padding>
+    <ion-list>
+        <ion-label>{{modalValues.modalMessage}}</ion-label>
+        <ion-item>
+          <ion-label fixed>Choose your manager</ion-label>
+          <ion-select [(ngModel)]="modalValues.manager">
+          <!--<ion-input [(ngModel)]="modalValues.manager" type="text" ngDefaultControl ></ion-input>-->
+          <ion-option *ngFor="let manager of listManagers" [value]="item">{{ manager }}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>Enter type of time off</ion-label>
+          <ion-select [(ngModel)]="modalValues.message">
+            <ion-option *ngFor="let message of listMessages" [value]="item">{{ message }}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <button ion-button color="secondary"  (click)="SaveModalData(modalValues)">Save</button>
+      <button ion-button color="danger"  (click)="closeModal()">Cancel</button>
+  </ion-content>
