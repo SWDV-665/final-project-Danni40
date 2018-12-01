@@ -63,8 +63,9 @@ export class InputDialogServiceProvider {
     var data = { 
         modalTitle : item ? 'Edit Report Details' : 'Add Report Details',
         modalMessage : item ?  "Please edit information..." : "Please enter information..", 
-        manager : item ? item.manager : null, 
-        message : item ? item.message : null,  
+        name : item ? item.name : null, 
+        message : item ? item.message : null, 
+        _id : item ? item._id : null, 
       };
     this.modalPage = this.modalCtrl.create('ModalPage',data); 
     this.modalPage.onDidDismiss(returnedDataFromModal =>{

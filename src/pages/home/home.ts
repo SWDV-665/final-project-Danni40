@@ -13,13 +13,26 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 export class HomePage {
 
   title = "EasyOut";
+  screen: any;
+  state: boolean = false;
+  userScreenshot: string;
+  items = [];
+  errorMessage: string;
 
   constructor(public navCtrl: NavController, public toastCtrl: ToastController, public alertCtrl: AlertController, public dataService: EasyOutServiceProvider, public inputDialogService: InputDialogServiceProvider, public socialSharing: SocialSharing) {
-
+    dataService.dataChanged$.subscribe((dataChanged: boolean) => {
+      this.loadItems();
+    });
   }
-
+  ionViewDidLoad() {
+    this.loadItems();
+  }
   loadItems(){
-    return this.dataService.getItems();
+    this.dataService.getItems()
+      .subscribe(
+        items => this.items = items,
+        error => this.errorMessage = <any>error
+        );
   }
 
   removeItem(item, index) {
@@ -30,7 +43,7 @@ export class HomePage {
     });
     toast.present();
 
-    this.dataService.removeItem(index);
+    this.dataService.removeItem(item);
   }
 
   shareItem(item, index) {
@@ -55,14 +68,14 @@ export class HomePage {
   }
 
   editItem(item, index) {
-    console.log("Edit Item - ", item, index);
+    console.log("Edit Item - ", item.name);
     const toast = this.toastCtrl.create({
       message: 'Editing Item - ' + index + " ...",
       duration: 3000
     });
     toast.present();
     //this.inputDialogService.showPrompt(item, index);
-    this.inputDialogService.openModal(item,index);
+    this.inputDialogService.openModal(item, index);
 
   }
 

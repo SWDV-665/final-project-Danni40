@@ -1,15 +1,17 @@
 {
   "name": "easy_out",
   "version": "0.0.1",
-  "author": "Siddique Hameed",
+  "author": "Dannielle Lewis",
   "homepage": "http://ionicframework.com/",
   "private": true,
+  "main": "server.js",
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:serve": "ionic-app-scripts serve",
+    "start": "node server.js"
   },
   "dependencies": {
     "@angular/animations": "5.2.10",
@@ -38,13 +40,20 @@
     "es6-promise-plugin": "4.2.2",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "mongoose": "^5.3.14",
     "rxjs": "5.5.10",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.9",
-    "typescript": "~2.6.2"
+    "typescript": "~2.6.2",
+    "body-parser": "1.18.3",
+    "cors": "2.8.4",
+    "express": "4.16.3",
+    "method-override": "2.3.10",
+    "mongoose": "5.1.5",
+    "morgan": "1.9.0"
   },
   "description": "An Ionic project",
   "cordova": {

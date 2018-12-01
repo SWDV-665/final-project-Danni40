@@ -16,9 +16,9 @@
         <ion-label>{{modalValues.modalMessage}}</ion-label>
         <ion-item>
           <ion-label fixed>Choose your manager</ion-label>
-          <ion-select [(ngModel)]="modalValues.manager">
+          <ion-select [(ngModel)]="modalValues.name">
           <!--<ion-input [(ngModel)]="modalValues.manager" type="text" ngDefaultControl ></ion-input>-->
-          <ion-option *ngFor="let manager of listManagers" [value]="item">{{ manager }}</ion-option>
+          <ion-option *ngFor="let name of listManagers" [value]="item">{{ name }}</ion-option>
           </ion-select>
         </ion-item>
 

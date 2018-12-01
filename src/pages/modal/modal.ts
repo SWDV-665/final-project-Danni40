@@ -15,8 +15,9 @@ import { IonicPage, NavController, NavParams , ViewController} from 'ionic-angul
 })
 export class ModalPage {
   modalValues;
-  manager;
-  listManagers = ['Jason Wallut', 'Nate White','Leo Medina'];
+  name;
+  //managers to be entered by the organization
+  listManagers = ['Jason Wallut', 'Nate White','Leo Medina','Bill Weidner','Mark Carranza','Jeff Walton'];
   message;
   listMessages = ['Sick Day','Vacation Day','Half Day'];
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl : ViewController) {
