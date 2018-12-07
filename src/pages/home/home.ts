@@ -54,11 +54,12 @@ export class HomePage {
     });
     toast.present();
 
-    let message = "Manager: " + item.manager + "\nMessage: " + item.message;
+    let message = "Manager: " + item.name + "\nMessage: " + item.message;
     let subject = "Shared via EasyOut App"
 
-        // Check if sharing via email is supported
-    this.socialSharing.share(message, subject).then(() => {
+     //sharing via email
+
+    this.socialSharing.shareViaEmail(message, subject, ['dslewis40@outlook.com']).then(() => {
       // Sharing via email is possible
       console.log("Shared successfully!");
     }).catch((error) => {

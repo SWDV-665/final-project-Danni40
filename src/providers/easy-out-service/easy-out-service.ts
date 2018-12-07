@@ -20,7 +20,8 @@ export class EasyOutServiceProvider {
 
   private dataChangeSubject: Subject<boolean>;
 
-  baseURL = "http://localhost:8080";
+  //baseURL = "http://localhost:8080";
+  baseURL = "https://easy-out-server.herokuapp.com";
 
   constructor(public http: HttpClient) {
     //constructor() {  
