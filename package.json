@@ -52,10 +52,6 @@
     "method-override": "2.3.10",
     "morgan": "1.9.0"
   },
-
-  "devDependencies": {
-    
-  },
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
