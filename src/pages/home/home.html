@@ -5,7 +5,8 @@
 </ion-header>
 
 <ion-content padding [class.newBG]="state">
-
+  <button ion-button full (click)="showPlatform()">Where am I running?</button>
+  <br>
   <h3 class="no-item" text-center *ngIf="items.length === 0">
     No information on the list!
   </h3>

@@ -5,6 +5,7 @@ import { AlertController } from 'ionic-angular';
 import { EasyOutServiceProvider } from '../../providers/easy-out-service/easy-out-service';
 import { InputDialogServiceProvider } from '../../providers/input-dialog-service/input-dialog-service';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { Platform } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -19,11 +20,12 @@ export class HomePage {
   items = [];
   errorMessage: string;
 
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public alertCtrl: AlertController, public dataService: EasyOutServiceProvider, public inputDialogService: InputDialogServiceProvider, public socialSharing: SocialSharing) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public alertCtrl: AlertController, public dataService: EasyOutServiceProvider, public inputDialogService: InputDialogServiceProvider, public socialSharing: SocialSharing, platform: Platform) {
     dataService.dataChanged$.subscribe((dataChanged: boolean) => {
       this.loadItems();
     });
   }
+
   ionViewDidLoad() {
     this.loadItems();
   }
@@ -85,5 +87,14 @@ export class HomePage {
     //this.inputDialogService.showPrompt();
     this.inputDialogService.openModal();
   }
-
+  showPlatform() {
+    let text = 'I run on: ' + this.platform.platforms();
+    let alert = this.alertCtrl.create({
+      title: 'My Home',
+      subTitle: text,
+      buttons: ['Ok']
+    });
+    alert.present();
+  }
+ 
 }
