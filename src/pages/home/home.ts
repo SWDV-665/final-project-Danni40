@@ -20,7 +20,7 @@ export class HomePage {
   items = [];
   errorMessage: string;
 
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public alertCtrl: AlertController, public dataService: EasyOutServiceProvider, public inputDialogService: InputDialogServiceProvider, public socialSharing: SocialSharing, platform: Platform) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public alertCtrl: AlertController, public dataService: EasyOutServiceProvider, public inputDialogService: InputDialogServiceProvider, public socialSharing: SocialSharing, private platform: Platform) {
     dataService.dataChanged$.subscribe((dataChanged: boolean) => {
       this.loadItems();
     });
