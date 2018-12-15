@@ -65,6 +65,7 @@ export class InputDialogServiceProvider {
         modalMessage : item ?  "Please edit information..." : "Please enter information..", 
         name : item ? item.name : null, 
         message : item ? item.message : null, 
+        remarks : item ? item.remarks : null,
         _id : item ? item._id : null, 
       };
     this.modalPage = this.modalCtrl.create('ModalPage',data); 

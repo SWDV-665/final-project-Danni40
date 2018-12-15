@@ -14,6 +14,7 @@
       <ion-item>
         <h2>{{item.name}}</h2>
         <p>{{item.message}}</p>
+        <p>{{item.remarks}}</p>
       </ion-item>
       <ion-item-options>
         <button (click)="editItem(item, i)" ion-button color="primary" icon-start>
@@ -21,8 +22,8 @@
           Edit
         </button>
         <button (click)="shareItem(item, i)" ion-button color="light" icon-start>
-          <ion-icon name="share"></ion-icon>
-          Share
+          <ion-icon name="send"></ion-icon>
+          Email
         </button>
         <button (click)="removeItem(item, i)" ion-button color="secondary" icon-start>
           <ion-icon name="trash"></ion-icon>

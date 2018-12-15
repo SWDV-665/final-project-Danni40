@@ -54,7 +54,7 @@ export class HomePage {
     });
     toast.present();
 
-    let message = "Manager: " + item.name + "\nMessage: " + item.message;
+    let message = "Manager: " + item.name + "\nMessage: " + item.message + "\nRemarks: " + item.remarks;
     let subject = "Shared via EasyOut App"
 
      //sharing via email

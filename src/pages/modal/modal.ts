@@ -20,6 +20,8 @@ export class ModalPage {
   listManagers = ['Jason Wallut', 'Nate White','Leo Medina','Bill Weidner','Mark Carranza','Jeff Walton'];
   message;
   listMessages = ['Sick Day','Vacation Day','Half Day'];
+  remarks;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl : ViewController) {
     this.modalValues = this.navParams.data;
   }

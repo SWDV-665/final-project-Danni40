@@ -28,6 +28,11 @@
             <ion-option *ngFor="let message of listMessages" [value]="item">{{ message }}</ion-option>
           </ion-select>
         </ion-item>
+        <ion-item>
+          <ion-label fixed>Remarks</ion-label>
+          <ion-input [(ngModel)]="modalValues.remarks" type="text" ngDefaultControl ></ion-input>
+        </ion-item>
+
       </ion-list>
 
       <button ion-button color="secondary"  (click)="SaveModalData(modalValues)">Save</button>
