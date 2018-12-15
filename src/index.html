@@ -20,11 +20,22 @@
 
   <!--un-comment this code to enable service worker-->
   <script>
+    //if ('serviceWorker' in navigator) {
+      //navigator.serviceWorker.register('service-worker.js')
+        //.then(() => console.log('service worker installed'))
+        //.catch(err => console.error('Error', err));
+    //}
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('service worker installed'))
-        .catch(err => console.error('Error', err));
-    }
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
   </script>
 
   <link href="build/main.css" rel="stylesheet">
