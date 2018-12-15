@@ -87,6 +87,7 @@ export class HomePage {
     //this.inputDialogService.showPrompt();
     this.inputDialogService.openModal();
   }
+  
   showPlatform() {
     let text = 'I run on: ' + this.platform.platforms();
     let alert = this.alertCtrl.create({
